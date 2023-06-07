@@ -3,11 +3,11 @@ import { useDispatch } from 'react-redux';
 import { Card } from './ContactCard.styled';
 import { deleteContact } from '../../redux/operations';
 
-export const ContactCard = ({ contact: { name, phone, id } }) => {
+export const ContactCard = ({ contact: { name, number, id } }) => {
   const dispatch = useDispatch();
   return (
     <Card>
-      <p>{name}</p> :<p>{phone}</p>
+      <p>{name}</p> :<p>{number}</p>
       <button type="button" onClick={() => dispatch(deleteContact(id))}>
         Delete
       </button>
@@ -19,6 +19,6 @@ ContactCard.propTypes = {
   contact: PropTypes.shape({
     name: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
   }),
 };

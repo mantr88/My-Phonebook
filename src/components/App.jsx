@@ -1,37 +1,22 @@
-import { useEffect } from 'react';
-import { GlobalStyle } from './Utils/GlobalStyle';
-import { ContactForm } from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList';
-import { Filter } from './Filter/Filter';
-import { ThemeProvider } from 'styled-components';
-import { theme } from './Utils/Theme';
-import { Layout } from './Layout/Layout';
-// import { PersistGate } from 'redux-persist/integration/react';
-// import { persistor } from 'redux/store';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectError, selectIsLoading } from 'redux/selectors';
-import { fetchContacts } from 'redux/operations';
+import { lazy } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Home from 'Pages/Home';
+import SharedLayout from './SharedLayout/SharedLayout';
+
+const Register = lazy(() => import('../Pages/Register'));
+const Login = lazy(() => import('../Pages/Login'));
+const Contacts = lazy(() => import('../Pages/Contacts'));
 
 export const App = () => {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
   return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <h1>Phonebook</h1>
-        <ContactForm />
-        <h2>Contacts</h2>
-        <Filter />
-        {isLoading && !error && <div>LOADING...</div>}
-        <ContactList />
-        <GlobalStyle />
-      </Layout>
-    </ThemeProvider>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Home />} />
+        <Route path="register" element={<Register />} />
+        <Route path="login" element={<Login />} />
+        <Route path="contacts" element={<Contacts />} />
+      </Route>
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
   );
 };
