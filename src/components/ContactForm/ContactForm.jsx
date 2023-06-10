@@ -11,7 +11,7 @@ const regExpForNumber =
 
 const UserSchema = Yup.object().shape({
   name: Yup.string().matches(regExpForName).required('Requered field'),
-  phone: Yup.string()
+  number: Yup.string()
     .matches(regExpForNumber, 'Invalid phone number')
     .max(17, 'Must be < 17!')
     .min(4, 'Must be > 4!')
@@ -25,7 +25,7 @@ export const ContactForm = () => {
     <Formik
       initialValues={{
         name: '',
-        phone: '',
+        number: '',
       }}
       validationSchema={UserSchema}
       onSubmit={(values, actions) => {
@@ -47,7 +47,7 @@ export const ContactForm = () => {
           Number
           <Field
             type="tel"
-            name="phone"
+            name="number"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
