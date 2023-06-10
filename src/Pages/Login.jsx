@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../redux/auth/auth-operations';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 
 const styles = {
   form: {
@@ -17,6 +19,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -31,7 +34,15 @@ const Login = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(login({ email, password }));
+    dispatch(login({ email, password }))
+      .unwrap()
+      .then(() => {
+        navigate('/');
+        toast('You succesfully logined!', {
+          style: { backgroundColor: '#0b980b', color: '#212121' },
+        });
+      })
+      .catch(() => toast.error('Error of login!'));
     setEmail('');
     setPassword('');
   };
@@ -59,8 +70,10 @@ const Login = () => {
             onChange={handleChange}
           />
         </label>
-
-        <button type="submit">LogIn</button>
+        <div>
+          <Link to="/register">Go to Sign Up</Link>
+        </div>
+        <button type="submit">Log in</button>
       </form>
     </div>
   );
