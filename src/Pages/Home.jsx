@@ -1,5 +1,8 @@
+import { Heading } from '@chakra-ui/react';
+import { Welcome } from 'components/Welсome/Welcome';
+
 const Home = () => {
-  return <h1>🏠This is home page of our application🏠</h1>;
+  return <Welcome />;
 };
 
 export default Home;
