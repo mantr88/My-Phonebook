@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Avatar, Logout, Name } from './UserMenu.styled';
-import avatar from './avatar-profile-icon.png';
+// import { Avatar, Logout, Name } from './UserMenu.styled';
+// import avatar from './avatar-profile-icon.png';
 import { selectUsername } from 'redux/auth/auth-selectors';
 import { logout } from 'redux/auth/auth-operations';
-import { Box, Button, Flex, Icon } from '@chakra-ui/react';
+import { Box, Button, Flex, Icon, Text } from '@chakra-ui/react';
 import { BiUser } from 'react-icons/bi';
 import { LuLogOut } from 'react-icons/lu';
 
@@ -14,7 +14,9 @@ export const UserMenu = () => {
     <Box>
       <Flex alignItems="center" gap="15px">
         <Icon as={BiUser} boxSize={8} />
-        <Name>Welcome {name}!</Name>
+        <Text fontSize={17} fontWeight="bold">
+          Welcome {name}!
+        </Text>
         <Button
           type="button"
           onClick={() => dispatch(logout())}
