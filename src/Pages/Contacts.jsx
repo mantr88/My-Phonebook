@@ -6,9 +6,13 @@ import { useEffect } from 'react';
 // import { PersistGate } from 'redux-persist/integration/react';
 // import { persistor } from 'redux/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectError, selectIsLoading } from 'redux/selectors';
+import {
+  selectError,
+  selectIsLoading,
+} from 'redux/selectors';
 import { fetchContacts } from 'redux/operations';
 import { Container } from 'components/Container/Container';
+import { AddContactModal } from 'components/AddContactModal/AddContactModal';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -21,7 +25,7 @@ const Contacts = () => {
   return (
     <div>
       <Container>
-        <ContactForm />
+        <AddContactModal />
         <Filter />
         {isLoading && !error && <div>LOADING...</div>}
         <ContactList />

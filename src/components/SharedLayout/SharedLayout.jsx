@@ -21,7 +21,7 @@ const SharedLayout = () => {
         my="0px"
         mx="auto"
         py="0px"
-        px="16px"
+        px="4"
         textAlign="center"
         color={theme => theme.colors.main}
       >

@@ -37,7 +37,6 @@ export const ContactForm = () => {
 
   return (
     <Box maxW="480px" mx="auto">
-      <Heading>Phonebook</Heading>
       <Formik
         initialValues={{
           name: '',

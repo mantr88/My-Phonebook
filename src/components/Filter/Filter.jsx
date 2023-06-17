@@ -18,9 +18,6 @@ export const Filter = () => {
   };
   return (
     <Box maxW="480px" mx="auto">
-      <Heading as="h3" mb="3">
-        Your contacts
-      </Heading>
       <FormControl mb="4">
         <FormLabel>
           <Icon as={TbListSearch} mr="5px" mb="-2px" />

@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Flex, Link, Text } from '@chakra-ui/react';
 export const Footer = () => {
   return (
     <Box
@@ -11,8 +11,21 @@ export const Footer = () => {
         borderColor: '#003b46',
         borderRadius: '10px',
       }}
+      color={t => t.colors.darkText}
     >
-      <Text>This is a foooter!</Text>
+      <Flex alignItems="center" justify="center">
+        <Text>
+          Created by
+          <Link
+            ml="3"
+            target="blanc"
+            href="https://github.com/mantr88"
+            color="#00008B"
+          >
+            &copy; Anton Petrenko
+          </Link>
+        </Text>
+      </Flex>
     </Box>
   );
 };
