@@ -11,9 +11,7 @@ import { Footer } from 'components/Footer/Footer';
 
 const SharedLayout = () => {
   return (
-    // <ThemeProvider theme={theme}>
     <Box
-      h="100vh"
       bgImage={bgImage}
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
@@ -25,7 +23,7 @@ const SharedLayout = () => {
         py="0px"
         px="16px"
         textAlign="center"
-        color="#003b46"
+        color={theme => theme.colors.main}
       >
         <AppBar />
         <Suspense fallback={<Spinner size="xl" />}>
@@ -34,7 +32,6 @@ const SharedLayout = () => {
         <Footer />
       </Box>
     </Box>
-    // </ThemeProvider>
   );
 };
 

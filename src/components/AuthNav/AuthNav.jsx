@@ -11,6 +11,8 @@ export const AuthNav = () => {
           variant="outline"
           rightIcon={<Icon as={LuFileSignature} boxSize={5} />}
           mr={4}
+          color={theme => theme.colors.darkText}
+          borderWidth="2px"
         >
           Registration
         </Button>
@@ -20,6 +22,8 @@ export const AuthNav = () => {
           colorScheme="black"
           variant="outline"
           rightIcon={<Icon as={LuLogIn} boxSize={5} />}
+          color={theme => theme.colors.darkText}
+          borderWidth="2px"
         >
           LogIn
         </Button>

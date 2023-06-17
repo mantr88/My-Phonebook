@@ -22,7 +22,9 @@ const regExpForNumber =
   /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/;
 
 const UserSchema = Yup.object().shape({
-  name: Yup.string().matches(regExpForName).required('Requered field'),
+  name: Yup.string()
+    .matches(regExpForName)
+    .required('Requered field'),
   number: Yup.string()
     .matches(regExpForNumber, 'Invalid phone number')
     .max(17, 'Must be < 17!')
@@ -59,9 +61,16 @@ export const ContactForm = () => {
                 title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                 required
                 placeholder="Enter contact name"
-                _placeholder={{ opacity: 0.6, color: 'black' }}
+                _placeholder={{
+                  opacity: 0.6,
+                  color: 'black',
+                }}
               />
-              <ErrorMessage as={FormErrorMessage} name="name" component="div" />
+              <ErrorMessage
+                as={FormErrorMessage}
+                name="name"
+                component="div"
+              />
             </FormLabel>
           </FormControl>
           <FormLabel htmlFor="number">
@@ -74,9 +83,16 @@ export const ContactForm = () => {
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               required
               placeholder="Enter contact phone number"
-              _placeholder={{ opacity: 0.6, color: 'black' }}
+              _placeholder={{
+                opacity: 0.6,
+                color: 'black',
+              }}
             />
-            <ErrorMessage as={FormErrorMessage} name="number" component="div" />
+            <ErrorMessage
+              as={FormErrorMessage}
+              name="number"
+              component="div"
+            />
           </FormLabel>
           <Button type="submit" colorScheme="teal">
             Add contact

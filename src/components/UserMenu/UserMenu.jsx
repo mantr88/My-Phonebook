@@ -13,8 +13,16 @@ export const UserMenu = () => {
   return (
     <Box>
       <Flex alignItems="center" gap="15px">
-        <Icon as={BiUserCircle} boxSize={8} />
-        <Text fontSize={17} fontWeight="bold">
+        <Icon
+          as={BiUserCircle}
+          boxSize={8}
+          color={theme => theme.colors.darkText}
+        />
+        <Text
+          fontSize={17}
+          fontWeight="bold"
+          color={theme => theme.colors.darkText}
+        >
           Welcome {name}!
         </Text>
         <Button
@@ -23,6 +31,8 @@ export const UserMenu = () => {
           colorScheme="black"
           variant="outline"
           rightIcon={<Icon as={LuLogOut} boxSize={5} />}
+          color={theme => theme.colors.darkText}
+          borderWidth="2px"
         >
           LogOut
         </Button>

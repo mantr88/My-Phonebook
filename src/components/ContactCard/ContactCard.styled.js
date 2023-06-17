@@ -14,7 +14,7 @@ export const Card = styled.li`
     margin-left: auto;
     margin-right: 16px;
     padding: 8px;
-    background-color: ${p => p.theme.colors.extraLight};
+    background-color: ${theme => theme.colors.extraLight};
     border: none;
     border-radius: 10px;
 

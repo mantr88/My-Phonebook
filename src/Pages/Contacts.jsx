@@ -22,10 +22,9 @@ const Contacts = () => {
     <div>
       <Container>
         <ContactForm />
-        <h2>Contacts</h2>
-        {/* <Filter />
-      {isLoading && !error && <div>LOADING...</div>}
-      <ContactList /> */}
+        <Filter />
+        {isLoading && !error && <div>LOADING...</div>}
+        <ContactList />
       </Container>
     </div>
   );

@@ -13,7 +13,7 @@ export const Navigation = () => {
         <Button
           leftIcon={<Icon as={BiHomeAlt2} />}
           colorScheme="teal"
-          color="black"
+          color={theme => theme.colors.darkText}
           size="md"
           variant="ghost"
         >
@@ -25,7 +25,7 @@ export const Navigation = () => {
           <Button
             leftIcon={<Icon as={RiContactsBook2Line} />}
             colorScheme="teal"
-            color="black"
+            color={theme => theme.colors.darkText}
             size="md"
             variant="ghost"
           >
