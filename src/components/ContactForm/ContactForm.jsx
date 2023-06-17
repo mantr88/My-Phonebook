@@ -1,6 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-// import { Form, ErrorMessage, FormField, Field } from './ContactForm.styled';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/operations';
 import {
@@ -10,7 +9,6 @@ import {
   Input,
   Box,
   FormErrorMessage,
-  Heading,
   Icon,
   Flex,
 } from '@chakra-ui/react';

@@ -12,6 +12,7 @@ export const Navigation = () => {
       as="nav"
       direction={['column', 'row', 'row']}
       fontSize={('xl', '19px', '19px')}
+      fontWeight="bold"
     >
       <Link to="/">
         <Button

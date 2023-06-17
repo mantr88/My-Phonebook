@@ -1,8 +1,4 @@
 import { Suspense } from 'react';
-// import { ThemeProvider } from 'styled-components';
-// import { theme } from '../Utils/Theme';
-// import { Layout } from '../Layout/Layout';
-// import { GlobalStyle } from '../Utils/GlobalStyle';
 import { Outlet } from 'react-router-dom';
 import { AppBar } from 'components/AppBar/AppBar';
 import { Box, Spinner } from '@chakra-ui/react';
@@ -16,7 +12,6 @@ const SharedLayout = () => {
       backgroundPosition="center"
       backgroundSize="cover"
       backgroundRepeat="no-repeat"
-      // maxH={[ß'100%', '100%', '100vh']}
     >
       <Box
         maxW="1080px"

@@ -1,19 +1,19 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../redux/auth/auth-operations';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link as LinkRoute, useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
-
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
+import {
+  Box,
+  Button,
+  FormControl,
+  FormLabel,
+  Heading,
+  Input,
+  Link,
+  Flex,
+} from '@chakra-ui/react';
+import { Container } from 'components/Container/Container';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -46,36 +46,61 @@ const Login = () => {
     setEmail('');
     setPassword('');
   };
+
   return (
-    <div>
-      <h1>Login</h1>
-
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Почта
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
-
-        <label style={styles.label}>
-          Пароль
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
-        <div>
-          <Link to="/register">Go to Sign Up</Link>
-        </div>
-        <button type="submit">Log in</button>
-      </form>
-    </div>
+    <Container>
+      <Heading color={theme => theme.colors.main}>Login</Heading>
+      <Box display="flex" justifyContent="center">
+        <form onSubmit={handleSubmit} l autoComplete="off">
+          <FormControl mx="2">
+            <FormLabel>
+              Email
+              <Input
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleChange}
+                placeholder="Enter your email"
+                _placeholder={{
+                  opacity: 0.6,
+                  color: 'black',
+                }}
+              />
+            </FormLabel>
+          </FormControl>
+          <FormControl mx="2">
+            <FormLabel>
+              Password
+              <Input
+                type="password"
+                name="password"
+                value={password}
+                onChange={handleChange}
+                placeholder="Enter your password"
+                _placeholder={{
+                  opacity: 0.6,
+                  color: 'black',
+                }}
+              />
+            </FormLabel>
+          </FormControl>
+          <Flex direction="column">
+            <Link mb="3" color="#00008B">
+              <LinkRoute to="/register">Go to Sign Up</LinkRoute>
+            </Link>
+            <Button
+              colorScheme="teal"
+              type="submit"
+              mb="10"
+              mx={[['10', '50px', '50px']]}
+              size="lg"
+            >
+              Log in
+            </Button>
+          </Flex>
+        </form>
+      </Box>
+    </Container>
   );
 };
 

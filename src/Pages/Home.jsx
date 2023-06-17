@@ -1,4 +1,3 @@
-import { Heading } from '@chakra-ui/react';
 import { Welcome } from 'components/Welсome/Welcome';
 
 const Home = () => {

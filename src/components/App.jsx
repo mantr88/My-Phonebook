@@ -7,8 +7,6 @@ import { fetchCurrentUser } from 'redux/auth/auth-operations';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 
-// 1. Переробити редюсери authSlice на build-case
-
 const Home = lazy(() => import('../Pages/Home'));
 const Register = lazy(() => import('../Pages/Register'));
 const Login = lazy(() => import('../Pages/Login'));
@@ -23,7 +21,7 @@ export const App = () => {
   return (
     <>
       <Toaster
-        position="top-right"
+        position="top-center"
         toastOptions={{
           // Define default options
           duration: 2000,

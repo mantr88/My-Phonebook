@@ -1,13 +1,10 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { Card } from './ContactCard.styled';
 import { deleteContact } from '../../redux/operations';
 import { Button, Flex, Icon, Text } from '@chakra-ui/react';
 import { FaUserTimes } from 'react-icons/fa';
 
-export const ContactCard = ({
-  contact: { name, number, id },
-}) => {
+export const ContactCard = ({ contact: { name, number, id } }) => {
   const dispatch = useDispatch();
   return (
     <Flex

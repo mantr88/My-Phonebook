@@ -3,7 +3,6 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
   Button,
@@ -22,12 +21,7 @@ export const AddContactModal = ({
       <Heading as="h3" mb="3">
         Your contacts
       </Heading>
-      <Button
-        colorScheme="teal"
-        onClick={onOpen}
-        mb="4"
-        maxW="160"
-      >
+      <Button colorScheme="teal" onClick={onOpen} mb="4" maxW="160">
         <SmallAddIcon mr="2" color="white" boxSize={7} />
         Add contact
       </Button>
@@ -41,9 +35,7 @@ export const AddContactModal = ({
           mx="2"
           my="auto"
         >
-          <ModalHeader textAlign="center">
-            Add contact
-          </ModalHeader>
+          <ModalHeader textAlign="center">Add contact</ModalHeader>
           <ModalCloseButton />
           <ModalBody>{children}</ModalBody>
         </ModalContent>
