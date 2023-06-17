@@ -8,7 +8,11 @@ import { RiContactsBook2Line } from 'react-icons/ri';
 export const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
-    <Flex as="nav" direction={['column', 'row', 'row']}>
+    <Flex
+      as="nav"
+      direction={['column', 'row', 'row']}
+      fontSize={('xl', '19px', '19px')}
+    >
       <Link to="/">
         <Button
           leftIcon={<Icon as={BiHomeAlt2} />}

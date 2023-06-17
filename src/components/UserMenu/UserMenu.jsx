@@ -22,6 +22,7 @@ export const UserMenu = () => {
         alignItems="center"
         gap="15px"
         direction={['column', 'row', 'row']}
+        mt={['20px', null, null]}
       >
         <Icon
           as={BiUserCircle}
@@ -29,7 +30,7 @@ export const UserMenu = () => {
           color={theme => theme.colors.darkText}
         />
         <Text
-          fontSize={17}
+          fontSize={('xl', '19px', '19px')}
           fontWeight="bold"
           color={theme => theme.colors.darkText}
         >

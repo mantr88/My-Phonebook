@@ -15,7 +15,7 @@ export const ContactList = () => {
         paddingX="16px"
         paddingY="0"
         maxW="480px"
-        maxH="340px"
+        maxH={['220px', '340px', '340px']}
         mx="auto"
         overflow="scroll"
       >

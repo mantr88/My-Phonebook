@@ -16,9 +16,9 @@ export const Filter = () => {
     dispatch(changeFilter(e.target.value));
   };
   return (
-    <Box maxW="480px" mx="auto">
+    <Box maxW={['200px', '480px', '480px']} mx="auto">
       <FormControl mb="4">
-        <FormLabel fontSize="xl">
+        <FormLabel fontSize={['l', 'xl', 'xl']}>
           <Icon as={TbListSearch} mr="5px" mb="-2px" />
           Find contacts by name
           <Input
