@@ -47,4 +47,6 @@ export const theme = extendTheme({
     heading: `'Open Sans', sans-serif`,
     body: `'Raleway', sans-serif`,
   },
+  breakpoints,
+  styles,
 });

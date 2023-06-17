@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectError, selectIsLoading } from 'redux/selectors';
 import { fetchContacts } from 'redux/operations';
-import { Container } from 'components/Container/Container';
+import { MainContainer } from 'components/MainContainer/MainContainer';
 import { AddContactModal } from 'components/AddContactModal/AddContactModal';
 import { useDisclosure } from '@chakra-ui/react';
 
@@ -20,20 +20,18 @@ const Contacts = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
   return (
-    <div>
-      <Container>
-        <AddContactModal
-          isOpen={isOpen}
-          onOpen={onOpen}
-          onClose={onClose}
-        >
-          <ContactForm onClose={onClose} />
-        </AddContactModal>
-        <Filter />
-        {isLoading && !error && <div>LOADING...</div>}
-        <ContactList />
-      </Container>
-    </div>
+    <MainContainer>
+      <AddContactModal
+        isOpen={isOpen}
+        onOpen={onOpen}
+        onClose={onClose}
+      >
+        <ContactForm onClose={onClose} />
+      </AddContactModal>
+      <Filter />
+      {isLoading && !error && <div>LOADING...</div>}
+      <ContactList />
+    </MainContainer>
   );
 };
 

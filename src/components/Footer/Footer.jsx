@@ -5,7 +5,7 @@ export const Footer = () => {
       as="footer"
       p="10px"
       sx={{
-        backgroundColor: 'hsla(192, 40%, 84%, 0.5)',
+        backgroundColor: 'hsla(183, 86%, 19%, 0.9)',
         backdropFilter: 'blur(8px)',
         border: '2px solid',
         borderColor: '#003b46',

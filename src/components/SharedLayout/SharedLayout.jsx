@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { AppBar } from 'components/AppBar/AppBar';
-import { Box, Spinner } from '@chakra-ui/react';
+import { Box, Image, Spinner } from '@chakra-ui/react';
 import bgImage from '../../image/pexels-roberto-lee-cortes-11402369.jpg';
 import { Footer } from 'components/Footer/Footer';
 
@@ -9,25 +9,23 @@ const SharedLayout = () => {
   return (
     <Box
       bgImage={bgImage}
-      backgroundPosition="center"
-      backgroundSize="cover"
-      backgroundRepeat="no-repeat"
+      objectFit={'cover'}
+      objectPosition={'center'}
     >
-      <Box
-        maxW="1080px"
-        my="0px"
-        mx="auto"
-        py="0px"
-        px="4"
-        textAlign="center"
-        color={theme => theme.colors.main}
-      >
-        <AppBar />
+      <AppBar />
+      <Box as="main" position="relative">
+        <Image
+          width={'100%'}
+          height={'100vh'}
+          src={bgImage}
+          objectFit={'cover'}
+          objectPosition={'center'}
+        />
         <Suspense fallback={<Spinner size="xl" />}>
           <Outlet />
         </Suspense>
-        <Footer />
       </Box>
+      <Footer />
     </Box>
   );
 };

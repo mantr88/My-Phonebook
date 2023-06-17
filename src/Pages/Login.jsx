@@ -13,7 +13,7 @@ import {
   Link,
   Flex,
 } from '@chakra-ui/react';
-import { Container } from 'components/Container/Container';
+import { MainContainer } from 'components/MainContainer/MainContainer';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -48,7 +48,7 @@ const Login = () => {
   };
 
   return (
-    <Container>
+    <MainContainer>
       <Heading color={theme => theme.colors.main}>Login</Heading>
       <Box display="flex" justifyContent="center">
         <form onSubmit={handleSubmit} l autoComplete="off">
@@ -84,7 +84,7 @@ const Login = () => {
               />
             </FormLabel>
           </FormControl>
-          <Flex direction="column">
+          <Flex direction="column" justify="center" align="center">
             <Link mb="3" color="#00008B">
               <LinkRoute to="/register">Go to Sign Up</LinkRoute>
             </Link>
@@ -100,7 +100,7 @@ const Login = () => {
           </Flex>
         </form>
       </Box>
-    </Container>
+    </MainContainer>
   );
 };
 

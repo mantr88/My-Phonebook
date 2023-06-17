@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { register } from '../redux/auth/auth-operations';
 import { Link as LinkRoute, useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
-import { Container } from 'components/Container/Container';
+import { MainContainer } from 'components/MainContainer/MainContainer';
 import {
   Box,
   Button,
@@ -52,7 +52,7 @@ const Register = () => {
   };
 
   return (
-    <Container>
+    <MainContainer>
       <Heading>Register</Heading>
       <Box display="flex" justifyContent="center">
         <form onSubmit={handleSubmit} autoComplete="off">
@@ -104,7 +104,7 @@ const Register = () => {
               />
             </FormLabel>
           </FormControl>
-          <Flex direction="column">
+          <Flex direction="column" justify="center" align="center">
             <Link mb="3" color="#00008B">
               <LinkRoute to="/login">Go to Log in</LinkRoute>
             </Link>
@@ -120,7 +120,7 @@ const Register = () => {
           </Flex>
         </form>
       </Box>
-    </Container>
+    </MainContainer>
   );
 };
 
