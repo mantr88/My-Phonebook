@@ -7,7 +7,6 @@ import {
   ModalCloseButton,
   Button,
   Heading,
-  VStack,
 } from '@chakra-ui/react';
 import { SmallAddIcon } from '@chakra-ui/icons';
 
