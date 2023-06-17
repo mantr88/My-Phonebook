@@ -25,6 +25,7 @@ const SharedLayout = () => {
         py="0px"
         px="16px"
         textAlign="center"
+        color="#003b46"
       >
         <AppBar />
         <Suspense fallback={<Spinner size="xl" />}>

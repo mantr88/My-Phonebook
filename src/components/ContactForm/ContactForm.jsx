@@ -1,8 +1,20 @@
-import { Formik } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { Form, ErrorMessage, FormField, Field } from './ContactForm.styled';
+// import { Form, ErrorMessage, FormField, Field } from './ContactForm.styled';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/operations';
+import {
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Box,
+  FormErrorMessage,
+  Heading,
+  Icon,
+} from '@chakra-ui/react';
+import { GrUserAdd } from 'react-icons/gr';
+import { BsTelephonePlus } from 'react-icons/bs';
 
 const regExpForName =
   /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
@@ -22,39 +34,55 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
 
   return (
-    <Formik
-      initialValues={{
-        name: '',
-        number: '',
-      }}
-      validationSchema={UserSchema}
-      onSubmit={(values, actions) => {
-        dispatch(addContact(values));
-        actions.resetForm();
-      }}
-    >
-      <Form>
-        <FormField>
-          Name
-          <Field
-            name="name"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
-          />
-          <ErrorMessage name="name" component="div" />
-        </FormField>
-        <FormField>
-          Number
-          <Field
-            type="tel"
-            name="number"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            required
-          />
-          <ErrorMessage name="number" component="div" />
-        </FormField>
-        <button type="submit">Add contact</button>
-      </Form>
-    </Formik>
+    <Box maxW="480px" mx="auto">
+      <Heading>Phonebook</Heading>
+      <Formik
+        initialValues={{
+          name: '',
+          number: '',
+        }}
+        validationSchema={UserSchema}
+        onSubmit={(values, actions) => {
+          console.log(values);
+          dispatch(addContact(values));
+          actions.resetForm();
+        }}
+      >
+        <Form>
+          <FormControl isRequired mb="12px">
+            <FormLabel htmlFor="name">
+              <Icon as={GrUserAdd} mr="5px" />
+              Name
+              <Field
+                as={Input}
+                name="name"
+                title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                required
+                placeholder="Enter contact name"
+                _placeholder={{ opacity: 0.6, color: 'black' }}
+              />
+              <ErrorMessage as={FormErrorMessage} name="name" component="div" />
+            </FormLabel>
+          </FormControl>
+          <FormLabel htmlFor="number">
+            <Icon as={BsTelephonePlus} mr="5px" />
+            Number
+            <Field
+              as={Input}
+              type="tel"
+              name="number"
+              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+              required
+              placeholder="Enter contact phone number"
+              _placeholder={{ opacity: 0.6, color: 'black' }}
+            />
+            <ErrorMessage as={FormErrorMessage} name="number" component="div" />
+          </FormLabel>
+          <Button type="submit" colorScheme="teal">
+            Add contact
+          </Button>
+        </Form>
+      </Formik>
+    </Box>
   );
 };
