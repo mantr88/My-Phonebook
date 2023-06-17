@@ -38,6 +38,8 @@ export const AddContactModal = ({
           bg={theme => theme.colors.light}
           borderRadius="3xl"
           p="8"
+          mx="2"
+          my="auto"
         >
           <ModalHeader textAlign="center">
             Add contact

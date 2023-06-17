@@ -16,7 +16,7 @@ const SharedLayout = () => {
       backgroundPosition="center"
       backgroundSize="cover"
       backgroundRepeat="no-repeat"
-      h={['100%', '100vh', '100vh']}
+      // maxH={[ß'100%', '100%', '100vh']}
     >
       <Box
         maxW="1080px"

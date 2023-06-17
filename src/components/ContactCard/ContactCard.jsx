@@ -14,11 +14,14 @@ export const ContactCard = ({
       as="li"
       flexDirection="row"
       alignItems="center"
-      fontSize={['l', 'l', 'xl']}
+      fontSize={['l', 'xl', 'xl']}
     >
-      <Flex direction={['column', 'column', 'row']}>
+      <Flex
+        direction={['column', 'row', 'row']}
+        alignItems="flex-start"
+      >
         <Text>{name}:</Text>
-        <Text ml="3" mb="2">
+        <Text ml={['0', '3', '3']} mb="2">
           {number}
         </Text>
       </Flex>

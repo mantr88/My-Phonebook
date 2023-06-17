@@ -8,8 +8,8 @@ export const Container = ({ children }) => {
       borderRadius="10px"
       border="2px solid"
       borderColor={theme => theme.colors.main}
-      h="80vh"
-      pt="12"
+      // h="80vh"
+      pt={['6', '8', '12']}
     >
       {children}
     </Box>

@@ -21,8 +21,8 @@ export const UserMenu = () => {
       <Flex
         alignItems="center"
         gap="15px"
-        direction={['column', 'row', 'row']}
-        mt={['20px', null, null]}
+        direction={['column', 'column', 'row']}
+        mt={['20px', '0', '0']}
       >
         <Icon
           as={BiUserCircle}

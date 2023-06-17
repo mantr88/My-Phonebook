@@ -14,7 +14,7 @@ export const Footer = () => {
       color={t => t.colors.darkText}
     >
       <Flex alignItems="center" justify="center">
-        <Text>
+        <Text fontSize={['l', 'xl', 'xl']}>
           Created by
           <Link
             ml="3"
