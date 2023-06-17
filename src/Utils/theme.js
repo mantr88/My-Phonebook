@@ -8,6 +8,30 @@ const breakpoints = {
   '2xl': '96em', // 1536px
 };
 
+const styles = {
+  global: () => ({
+    html: {
+      width: '100%',
+      height: '100%',
+    },
+
+    body: {
+      width: '100%',
+      height: '100%',
+      color: 'hsl(0, 0%, 100%)',
+    },
+
+    '#root': {
+      width: '100%',
+      height: '100%',
+    },
+
+    '*': {
+      boxSizing: 'border-box',
+    },
+  }),
+};
+
 export const theme = extendTheme({
   colors: {
     main: '#003b46',

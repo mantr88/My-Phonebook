@@ -8,7 +8,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { ChakraProvider } from '@chakra-ui/react';
 import '@fontsource/roboto/400.css';
 import '@fontsource/open-sans/700.css';
-import { theme } from 'components/Utils/theme';
+import { theme } from 'Utils/theme';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
