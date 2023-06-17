@@ -15,6 +15,7 @@ const SharedLayout = () => {
       bgImage={bgImage}
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
+      h="100vh"
     >
       <Box
         maxW="1080px"

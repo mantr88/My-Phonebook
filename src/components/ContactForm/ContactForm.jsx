@@ -12,6 +12,7 @@ import {
   FormErrorMessage,
   Heading,
   Icon,
+  Flex,
 } from '@chakra-ui/react';
 import { GrUserAdd } from 'react-icons/gr';
 import { BsTelephonePlus } from 'react-icons/bs';
@@ -32,7 +33,7 @@ const UserSchema = Yup.object().shape({
     .required('Requered field'),
 });
 
-export const ContactForm = () => {
+export const ContactForm = ({ onClose }) => {
   const dispatch = useDispatch();
 
   return (
@@ -47,6 +48,7 @@ export const ContactForm = () => {
           console.log(values);
           dispatch(addContact(values));
           actions.resetForm();
+          onClose();
         }}
       >
         <Form>
@@ -93,9 +95,11 @@ export const ContactForm = () => {
               component="div"
             />
           </FormLabel>
-          <Button type="submit" colorScheme="teal">
-            Add contact
-          </Button>
+          <Flex justify="center">
+            <Button type="submit" mt="8" colorScheme="teal">
+              Add contact
+            </Button>
+          </Flex>
         </Form>
       </Formik>
     </Box>

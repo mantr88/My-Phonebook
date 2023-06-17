@@ -7,14 +7,16 @@ import {
   ModalBody,
   ModalCloseButton,
   Button,
-  useDisclosure,
   Heading,
 } from '@chakra-ui/react';
 import { SmallAddIcon } from '@chakra-ui/icons';
-import { ContactForm } from 'components/ContactForm/ContactForm';
 
-export const AddContactModal = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+export const AddContactModal = ({
+  children,
+  onClose,
+  isOpen,
+  onOpen,
+}) => {
   return (
     <>
       <Heading as="h3" mb="3">
@@ -35,26 +37,13 @@ export const AddContactModal = () => {
         <ModalContent
           bg={theme => theme.colors.light}
           borderRadius="3xl"
+          p="8"
         >
           <ModalHeader textAlign="center">
             Add contact
           </ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
-            <ContactForm />
-          </ModalBody>
-          <ModalFooter>
-            {/* <Button
-              colorScheme="blue"
-              mr={3}
-              onClick={onClose}
-            >
-              Close
-            </Button>
-            <Button variant="ghost">
-              Secondary Action
-            </Button> */}
-          </ModalFooter>
+          <ModalBody>{children}</ModalBody>
         </ModalContent>
       </Modal>
     </>

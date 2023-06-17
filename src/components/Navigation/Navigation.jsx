@@ -1,4 +1,4 @@
-import { Button, Icon } from '@chakra-ui/react';
+import { Button, Flex, Icon } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { selectIsLoggedIn } from 'redux/auth/auth-selectors';
@@ -8,7 +8,7 @@ import { RiContactsBook2Line } from 'react-icons/ri';
 export const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
-    <nav>
+    <Flex as="nav" direction={['column', 'row', 'row']}>
       <Link to="/">
         <Button
           leftIcon={<Icon as={BiHomeAlt2} />}
@@ -33,6 +33,6 @@ export const Navigation = () => {
           </Button>
         </Link>
       )}
-    </nav>
+    </Flex>
   );
 };

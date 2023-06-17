@@ -19,7 +19,11 @@ export const AppBar = () => {
         borderRadius: '10px',
       }}
     >
-      <Flex alignItems="center" justify="space-between">
+      <Flex
+        alignItems="center"
+        justify="space-between"
+        direction={['column', 'row', 'row']}
+      >
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
       </Flex>

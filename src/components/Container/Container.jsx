@@ -6,7 +6,7 @@ export const Container = ({ children }) => {
       bg={theme => theme.colors.bg}
       m="4"
       borderRadius="3xl"
-      // h="70vh"
+      h="80vh"
       pt="12"
     >
       {children}

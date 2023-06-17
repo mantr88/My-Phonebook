@@ -13,11 +13,14 @@ import {
 import { fetchContacts } from 'redux/operations';
 import { Container } from 'components/Container/Container';
 import { AddContactModal } from 'components/AddContactModal/AddContactModal';
+import { useDisclosure } from '@chakra-ui/react';
 
 const Contacts = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -25,7 +28,13 @@ const Contacts = () => {
   return (
     <div>
       <Container>
-        <AddContactModal />
+        <AddContactModal
+          isOpen={isOpen}
+          onOpen={onOpen}
+          onClose={onClose}
+        >
+          <ContactForm onClose={onClose} />
+        </AddContactModal>
         <Filter />
         {isLoading && !error && <div>LOADING...</div>}
         <ContactList />

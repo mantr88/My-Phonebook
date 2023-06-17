@@ -1,7 +1,6 @@
 import {
   FormControl,
   FormLabel,
-  Heading,
   Input,
   Box,
   Icon,
@@ -19,7 +18,7 @@ export const Filter = () => {
   return (
     <Box maxW="480px" mx="auto">
       <FormControl mb="4">
-        <FormLabel>
+        <FormLabel fontSize="xl">
           <Icon as={TbListSearch} mr="5px" mb="-2px" />
           Find contacts by name
           <Input

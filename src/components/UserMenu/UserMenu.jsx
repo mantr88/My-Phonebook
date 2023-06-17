@@ -3,7 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 // import avatar from './avatar-profile-icon.png';
 import { selectUsername } from 'redux/auth/auth-selectors';
 import { logout } from 'redux/auth/auth-operations';
-import { Box, Button, Flex, Icon, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Flex,
+  Icon,
+  Text,
+} from '@chakra-ui/react';
 import { BiUserCircle } from 'react-icons/bi';
 import { LuLogOut } from 'react-icons/lu';
 
@@ -12,7 +18,11 @@ export const UserMenu = () => {
   const name = useSelector(selectUsername);
   return (
     <Box>
-      <Flex alignItems="center" gap="15px">
+      <Flex
+        alignItems="center"
+        gap="15px"
+        direction={['column', 'row', 'row']}
+      >
         <Icon
           as={BiUserCircle}
           boxSize={8}
