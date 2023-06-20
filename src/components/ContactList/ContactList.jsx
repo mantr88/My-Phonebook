@@ -4,9 +4,7 @@ import { selectVisibleContacts } from 'redux/selectors';
 import { Box } from '@chakra-ui/react';
 
 export const ContactList = () => {
-  const visibleContacts = useSelector(
-    selectVisibleContacts
-  );
+  const visibleContacts = useSelector(selectVisibleContacts);
 
   return (
     <>
@@ -15,7 +13,7 @@ export const ContactList = () => {
         paddingX="16px"
         paddingY="0"
         maxW="480px"
-        maxH={['220px', '340px', '340px']}
+        maxH={['360px', '340px', '340px']}
         mx="auto"
         overflow="scroll"
       >

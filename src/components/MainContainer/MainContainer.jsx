@@ -8,7 +8,7 @@ export const MainContainer = ({ children }) => {
       top={'50%'}
       left={'50%'}
       transform="translate(-50%, -50%)"
-      paddingTop={'40px'}
+      paddingTop={'20px'}
       paddingBottom={'40px'}
       sx={{
         backgroundColor: 'hsla(192, 40%, 84%, 0.6)',

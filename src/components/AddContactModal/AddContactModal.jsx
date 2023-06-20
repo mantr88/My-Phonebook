@@ -7,6 +7,7 @@ import {
   ModalCloseButton,
   Button,
   Heading,
+  Flex,
 } from '@chakra-ui/react';
 import { SmallAddIcon } from '@chakra-ui/icons';
 
@@ -21,10 +22,12 @@ export const AddContactModal = ({
       <Heading as="h3" mb="3" textAlign="center">
         Your contacts
       </Heading>
-      <Button colorScheme="teal" onClick={onOpen} mb="4">
-        <SmallAddIcon mr="2" color="white" boxSize={7} />
-        Add contact
-      </Button>
+      <Flex justify={'center'}>
+        <Button colorScheme="teal" onClick={onOpen} mb="4">
+          <SmallAddIcon mr="2" color="white" boxSize={7} />
+          Add contact
+        </Button>
+      </Flex>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
