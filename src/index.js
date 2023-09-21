@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="/My-Phonebook">
+        <BrowserRouter basename="/my-phonebook">
           <Provider store={store}>
             <App />
           </Provider>
